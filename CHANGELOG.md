@@ -1,419 +1,418 @@
-2.20.3 / 2019-10-11
-==================
+# Changelog
 
-  * Support Node.js 0.10 (Revert #1059)
-  * Ran "npm unpublish commander@2.20.2". There is no 2.20.2.
+All notable changes to this project will be documented in this file.
 
-2.20.1 / 2019-09-29
-==================
+The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
+and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-  * Improve executable subcommand tracking
-  * Update dev dependencies
+<!-- markdownlint-disable MD024 -->
+<!-- markdownlint-disable MD004 -->
 
-2.20.0 / 2019-04-02
-==================
+## [8.2.0] (2021-09-10)
 
-  * fix: resolve symbolic links completely when hunting for subcommands (#935)
-  * Update index.d.ts (#930)
-  * Update Readme.md (#924)
-  * Remove --save option as it isn't required anymore (#918)
-  * Add link to the license file (#900)
-  * Added example of receiving args from options (#858)
-  * Added missing semicolon (#882)
-  * Add extension to .eslintrc (#876)
-
-2.19.0 / 2018-10-02
-==================
-
-  * Removed newline after Options and Commands headers (#864)
-  * Bugfix - Error output (#862)
-  * Fix to change default value to string (#856)
-
-2.18.0 / 2018-09-07
-==================
-
-  * Standardize help output (#853)
-  * chmod 644 travis.yml (#851)
-  * add support for execute typescript subcommand via ts-node (#849)
-
-2.17.1 / 2018-08-07
-==================
-
-  * Fix bug in command emit (#844)
-
-2.17.0 / 2018-08-03
-==================
-
-  * fixed newline output after help information (#833)
-  * Fix to emit the action even without command (#778)
-  * npm update (#823)
-
-2.16.0 / 2018-06-29
-==================
-
-  * Remove Makefile and `test/run` (#821)
-  * Make 'npm test' run on Windows (#820)
-  * Add badge to display install size (#807)
-  * chore: cache node_modules (#814)
-  * chore: remove Node.js 4 (EOL), add Node.js 10 (#813)
-  * fixed typo in readme (#812)
-  * Fix types (#804)
-  * Update eslint to resolve vulnerabilities in lodash (#799)
-  * updated readme with custom event listeners. (#791)
-  * fix tests (#794)
-
-2.15.0 / 2018-03-07
-==================
-
-  * Update downloads badge to point to graph of downloads over time instead of duplicating link to npm
-  * Arguments description
-
-2.14.1 / 2018-02-07
-==================
-
-  * Fix typing of help function
-
-2.14.0 / 2018-02-05
-==================
-
-  * only register the option:version event once
-  * Fixes issue #727: Passing empty string for option on command is set to undefined
-  * enable eqeqeq rule
-  * resolves #754 add linter configuration to project
-  * resolves #560 respect custom name for version option
-  * document how to override the version flag
-  * document using options per command
-
-2.13.0 / 2018-01-09
-==================
-
-  * Do not print default for --no-
-  * remove trailing spaces in command help
-  * Update CI's Node.js to LTS and latest version
-  * typedefs: Command and Option types added to commander namespace
-
-2.12.2 / 2017-11-28
-==================
-
-  * fix: typings are not shipped
-
-2.12.1 / 2017-11-23
-==================
-
-  * Move @types/node to dev dependency
-
-2.12.0 / 2017-11-22
-==================
-
-  * add attributeName() method to Option objects
-  * Documentation updated for options with --no prefix
-  * typings: `outputHelp` takes a string as the first parameter
-  * typings: use overloads
-  * feat(typings): update to match js api
-  * Print default value in option help
-  * Fix translation error
-  * Fail when using same command and alias (#491)
-  * feat(typings): add help callback
-  * fix bug when description is add after command with options (#662)
-  * Format js code
-  * Rename History.md to CHANGELOG.md (#668)
-  * feat(typings): add typings to support TypeScript (#646)
-  * use current node
-
-2.11.0 / 2017-07-03
-==================
-
-  * Fix help section order and padding (#652)
-  * feature: support for signals to subcommands (#632)
-  * Fixed #37, --help should not display first (#447)
-  * Fix translation errors. (#570)
-  * Add package-lock.json
-  * Remove engines
-  * Upgrade package version
-  * Prefix events to prevent conflicts between commands and options (#494)
-  * Removing dependency on graceful-readlink
-  * Support setting name in #name function and make it chainable
-  * Add .vscode directory to .gitignore (Visual Studio Code metadata)
-  * Updated link to ruby commander in readme files
-
-2.10.0 / 2017-06-19
-==================
-
-  * Update .travis.yml. drop support for older node.js versions.
-  * Fix require arguments in README.md
-  * On SemVer you do not start from 0.0.1
-  * Add missing semi colon in readme
-  * Add save param to npm install
-  * node v6 travis test
-  * Update Readme_zh-CN.md
-  * Allow literal '--' to be passed-through as an argument
-  * Test subcommand alias help
-  * link build badge to master branch
-  * Support the alias of Git style sub-command
-  * added keyword commander for better search result on npm
-  * Fix Sub-Subcommands
-  * test node.js stable
-  * Fixes TypeError when a command has an option called `--description`
-  * Update README.md to make it beginner friendly and elaborate on the difference between angled and square brackets.
-  * Add chinese Readme file
-
-2.9.0 / 2015-10-13
-==================
-
-  * Add option `isDefault` to set default subcommand #415 @Qix-
-  * Add callback to allow filtering or post-processing of help text #434 @djulien
-  * Fix `undefined` text in help information close #414 #416 @zhiyelee
-
-2.8.1 / 2015-04-22
-==================
+### Added
 
- * Back out `support multiline description` Close #396 #397
-
-2.8.0 / 2015-04-07
-==================
-
-  * Add `process.execArg` support, execution args like `--harmony` will be passed to sub-commands #387 @DigitalIO @zhiyelee
-  * Fix bug in Git-style sub-commands #372 @zhiyelee
-  * Allow commands to be hidden from help #383 @tonylukasavage
-  * When git-style sub-commands are in use, yet none are called, display help #382 @claylo
-  * Add ability to specify arguments syntax for top-level command #258 @rrthomas
-  * Support multiline descriptions #208 @zxqfox
+- `.showSuggestionAfterError()` to show suggestions after unknown command or unknown option ([#1590])
+- add `Option` support for values from environment variables using `.env()` ([#1587])
 
-2.7.1 / 2015-03-11
-==================
+### Changed
 
- * Revert #347 (fix collisions when option and first arg have same name) which causes a bug in #367.
+- show error for unknown global option before subcommand (rather than just help) ([#1590])
 
-2.7.0 / 2015-03-09
-==================
+### Removed
 
- * Fix git-style bug when installed globally. Close #335 #349 @zhiyelee
- * Fix collisions when option and first arg have same name. Close #346 #347 @tonylukasavage
- * Add support for camelCase on `opts()`. Close #353  @nkzawa
- * Add node.js 0.12 and io.js to travis.yml
- * Allow RegEx options. #337 @palanik
- * Fixes exit code when sub-command failing.  Close #260 #332 @pirelenito
- * git-style `bin` files in $PATH make sense. Close #196 #327  @zhiyelee
+- TypeScript declaration of unimplemented `Option` method `argumentRejected`
 
-2.6.0 / 2014-12-30
-==================
+## [8.1.0] (2021-07-27)
 
-  * added `Command#allowUnknownOption` method. Close #138 #318 @doozr @zhiyelee
-  * Add application description to the help msg. Close #112 @dalssoft
+### Added
 
-2.5.1 / 2014-12-15
-==================
+- `.copyInheritedSettings()` ([#1557])
+- update Chinese translations of documentation for Commander v8 ([#1570])
+- `Argument` methods for `.argRequired()` and `.argOptional()` ([#1567])
 
-  * fixed two bugs incurred by variadic arguments. Close #291 @Quentin01 #302 @zhiyelee
+## [8.0.0] (2021-06-25)
 
-2.5.0 / 2014-10-24
-==================
+### Added
 
- * add support for variadic arguments. Closes #277 @whitlockjc
+- `.argument(name, description)` for adding command-arguments ([#1490])
+  - supports default value for optional command-arguments ([#1508])
+  - supports custom processing function ([#1508])
+- `.createArgument()` factory method ([#1497])
+- `.addArgument()` ([#1490])
+- `Argument` supports `.choices()` ([#1525])
+- `.showHelpAfterError()` to display full help or a custom message after an error ([#1534])
+- `.hook()` with support for `'preAction'` and `'postAction'` callbacks ([#1514])
+- client typing of `.opts()` return type using TypeScript generics ([#1539])
+- the number of command-arguments is checked for programs without an action handler ([#1502])
+- `.getOptionValue()` and `.setOptionValue()` ([#1521])
 
-2.4.0 / 2014-10-17
-==================
+### Changed
 
- * fixed a bug on executing the coercion function of subcommands option. Closes #270
- * added `Command.prototype.name` to retrieve command name. Closes #264 #266 @tonylukasavage
- * added `Command.prototype.opts` to retrieve all the options as a simple object of key-value pairs. Closes #262 @tonylukasavage
- * fixed a bug on subcommand name. Closes #248 @jonathandelgado
- * fixed function normalize doesn’t honor option terminator. Closes #216 @abbr
+- refactor and simplify TypeScript declarations (with no default export) ([#1520])
+- `.parseAsync()` is now declared as `async` ([#1513])
+- *Breaking:* `Help` method `.visibleArguments()` returns array of `Argument` ([#1490])
+- *Breaking:* Commander 8 requires Node.js 12 or higher ([#1500])
+- *Breaking:* `CommanderError` code `commander.invalidOptionArgument` renamed `commander.invalidArgument` ([#1508])
+- *Breaking:* TypeScript declaration for `.addTextHelp()` callback no longer allows result of `undefined`, now just `string` ([#1516])
+- refactor `index.tab` into a file per class ([#1522])
+- remove help suggestion from "unknown command" error message (see `.showHelpAfteError()`) ([#1534])
+- `Command` property `.arg` initialised to empty array (was previously undefined) ([#1529])
+- update dependencies
 
-2.3.0 / 2014-07-16
-==================
+### Deprecated
 
- * add command alias'. Closes PR #210
- * fix: Typos. Closes #99
- * fix: Unused fs module. Closes #217
+- second parameter of `cmd.description(desc, argDescriptions)` for adding argument descriptions ([#1490])
+  - (use new `.argument(name, description)` instead)
+- `InvalidOptionArgumentError` (replaced by `InvalidArgumentError`) ([#1508])
 
-2.2.0 / 2014-03-29
-==================
+### Removed
 
- * add passing of previous option value
- * fix: support subcommands on windows. Closes #142
- * Now the defaultValue passed as the second argument of the coercion function.
+- *Breaking:* TypeScript declaration for default export of global `Command` object ([#1520])
+  - (still available as named `program` export)
 
-2.1.0 / 2013-11-21
-==================
+### Migration Tips
 
- * add: allow cflag style option params, unit test, fixes #174
+If you have a simple program without an action handler, you will now get an error if
+there are missing command-arguments.
 
-2.0.0 / 2013-07-18
-==================
+```js
+program
+  .option('-d, --debug')
+  .arguments('<file>');
+program.parse();
+```
 
- * remove input methods (.prompt, .confirm, etc)
+```sh
+$ node trivial.js 
+error: missing required argument 'file'
+```
 
-1.3.2 / 2013-07-18
-==================
+If you want to show the help in this situation, you could check the arguments before parsing:
 
- * add support for sub-commands to co-exist with the original command
+```js
+if (process.argv.length === 2)
+  program.help();
+program.parse();
+```
 
-1.3.1 / 2013-07-18
-==================
+Or, you might choose to show the help after any user error:
 
- * add quick .runningCommand hack so you can opt-out of other logic when running a sub command
+```js
+program.showHelpAfterError();
+```
 
-1.3.0 / 2013-07-09
-==================
+## [8.0.0-2] (2021-06-06)
 
- * add EACCES error handling
- * fix sub-command --help
+(Released in 8.0.0)
 
-1.2.0 / 2013-06-13
-==================
+## [8.0.0-1] (2021-05-30)
 
- * allow "-" hyphen as an option argument
- * support for RegExp coercion
+(Released in 8.0.0)
 
-1.1.1 / 2012-11-20
-==================
+## [8.0.0-0] (2021-05-23)
 
-  * add more sub-command padding
-  * fix .usage() when args are present. Closes #106
+(Released in 8.0.0)
 
-1.1.0 / 2012-11-16
-==================
+## [7.2.0] (2021-03-22)
 
-  * add git-style executable subcommand support. Closes #94
+### Added
 
-1.0.5 / 2012-10-09
-==================
+- TypeScript typing for `parent` property on `Command` ([#1475])
+- TypeScript typing for `.attributeName()` on `Option` ([#1483])
+- support information in package ([#1477])
 
-  * fix `--name` clobbering. Closes #92
-  * fix examples/help. Closes #89
+### Changed
 
-1.0.4 / 2012-09-03
-==================
+- improvements to error messages, README, and tests
+- update dependencies
 
-  * add `outputHelp()` method.
+## [7.1.0] (2021-02-15)
 
-1.0.3 / 2012-08-30
-==================
+### Added
 
-  * remove invalid .version() defaulting
+- support for named imports from ECMAScript modules ([#1440])
+- add `.cjs` to list of expected script file extensions ([#1449])
+- allow using option choices and variadic together ([#1454])
 
-1.0.2 / 2012-08-24
-==================
+### Fixed
 
-  * add `--foo=bar` support [arv]
-  * fix password on node 0.8.8. Make backward compatible with 0.6 [focusaurus]
+- replace use of deprecated `process.mainModule` ([#1448])
+- regression for legacy `command('*')` and call when command line includes options ([#1464])
+- regression for `on('command:*', ...)` and call when command line includes unknown options ([#1464])
+- display best error for combination of unknown command and unknown option (i.e. unknown command) ([#1464])
 
-1.0.1 / 2012-08-03
-==================
+### Changed
 
-  * fix issue #56
-  * fix tty.setRawMode(mode) was moved to tty.ReadStream#setRawMode() (i.e. process.stdin.setRawMode())
+- make TypeScript typings tests stricter ([#1453])
+- improvements to README and tests
 
-1.0.0 / 2012-07-05
-==================
+## [7.0.0] (2021-01-15)
 
-  * add support for optional option descriptions
-  * add defaulting of `.version()` to package.json's version
+### Added
 
-0.6.1 / 2012-06-01
-==================
+- `.enablePositionalOptions()` to let program and subcommand reuse same option ([#1427])
+- `.passThroughOptions()` to pass options through to other programs without needing `--` ([#1427])
+- `.allowExcessArguments(false)` to show an error message if there are too many command-arguments on command line for the action handler ([#1409])
+- `.configureOutput()` to modify use of stdout and stderr or customise display of errors ([#1387])
+- use `.addHelpText()` to add text before or after the built-in help, for just current command or also for all subcommands ([#1296])
+- enhance Option class ([#1331])
+  - allow hiding options from help
+  - allow restricting option arguments to a list of choices
+  - allow setting how default value is shown in help
+- `.createOption()` to support subclassing of automatically created options (like `.createCommand()`) ([#1380])
+- refactor the code generating the help into a separate public Help class ([#1365])
+  - support sorting subcommands and options in help
+  - support specifying wrap width (columns)
+  - allow subclassing Help class
+  - allow configuring Help class without subclassing
 
-  * Added: append (yes or no) on confirmation
-  * Added: allow node.js v0.7.x
+### Changed
 
-0.6.0 / 2012-04-10
-==================
+- *Breaking:* options are stored safely by default, not as properties on the command ([#1409])
+    - this especially affects accessing options on program, use `program.opts()`
+    - revert behaviour with `.storeOptionsAsProperties()`
+- *Breaking:* action handlers are passed options and command separately ([#1409])
+- deprecated callback parameter to `.help()` and `.outputHelp()` (removed from README) ([#1296])
+- *Breaking:* errors now displayed using `process.stderr.write()` instead of `console.error()`
+- deprecate `.on('--help')` (removed from README) ([#1296])
+- initialise the command description to empty string (previously undefined) ([#1365])
+- document and annotate deprecated routines ([#1349])
 
-  * Added `.prompt(obj, callback)` support. Closes #49
-  * Added default support to .choose(). Closes #41
-  * Fixed the choice example
+### Fixed
 
-0.5.1 / 2011-12-20
-==================
+- wrapping bugs in help ([#1365])
+  - first line of command description was wrapping two characters early
+  - pad width calculation was not including help option and help command
+  - pad width calculation was including hidden options and commands
+- improve backwards compatibility for custom command event listeners ([#1403])
+  
+### Deleted
 
-  * Fixed `password()` for recent nodes. Closes #36
+- *Breaking:* `.passCommandToAction()` ([#1409])
+    - no longer needed as action handler is passed options and command
+- *Breaking:* "extra arguments" parameter to action handler ([#1409])
+    - if being used to detect excess arguments, there is now an error available by setting `.allowExcessArguments(false)`
 
-0.5.0 / 2011-12-04
-==================
+### Migration Tips
 
-  * Added sub-command option support [itay]
+The biggest change is the parsed option values. Previously the options were stored by default as properties on the command object, and now the options are stored separately.
 
-0.4.3 / 2011-12-04
-==================
+If you wish to restore the old behaviour and get running quickly you can call `.storeOptionsAsProperties()`. 
+To allow you to move to the new code patterns incrementally, the action handler will be passed the command _twice_,
+to match the new "options" and "command" parameters (see below).
 
-  * Fixed custom help ordering. Closes #32
+**program options**
 
-0.4.2 / 2011-11-24
-==================
+Use the `.opts()` method to access the options. This is available on any command but is used most with the program.
 
-  * Added travis support
-  * Fixed: line-buffered input automatically trimmed. Closes #31
+```js
+program.option('-d, --debug');
+program.parse();
+// Old code before Commander 7
+if (program.debug) console.log(`Program name is ${program.name()}`);
+```
 
-0.4.1 / 2011-11-18
-==================
+```js
+// New code
+const options = program.opts();
+if (options.debug) console.log(`Program name is ${program.name()}`);
+```
 
-  * Removed listening for "close" on --help
+**action handler**
 
-0.4.0 / 2011-11-15
-==================
+The action handler gets passed a parameter for each command-argument you declared. Previously by default the next parameter was the command object with the options as properties. Now the next two parameters are instead the options and the command. If you
+only accessed the options there may be no code changes required.
 
-  * Added support for `--`. Closes #24
+```js
+program
+  .command('compress <filename>')
+  .option('-t, --trace')
+  // Old code before Commander 7
+  .action((filename, cmd)) => {
+    if (cmd.trace) console.log(`Command name is ${cmd.name()}`);
+  });
+```
 
-0.3.3 / 2011-11-14
-==================
+```js
+  // New code
+  .action((filename, options, command)) => {
+    if (options.trace) console.log(`Command name is ${command.name()}`);
+  });
+```
 
-  * Fixed: wait for close event when writing help info [Jerry Hamlet]
+If you already set `.storeOptionsAsProperties(false)` you may still need to adjust your code.
 
-0.3.2 / 2011-11-01
-==================
+```js
+program
+  .command('compress <filename>')
+  .storeOptionsAsProperties(false)
+  .option('-t, --trace')
+  // Old code before Commander 7
+  .action((filename, command)) => {
+    if (command.opts().trace) console.log(`Command name is ${command.name()}`);
+  });
+```
 
-  * Fixed long flag definitions with values [felixge]
+```js
+   // New code
+   .action((filename, options, command)) => {
+      if (command.opts().trace) console.log(`Command name is ${command.name()}`);
+   });
+```
 
-0.3.1 / 2011-10-31
-==================
+## [7.0.0-2] (2020-12-14)
 
-  * Changed `--version` short flag to `-V` from `-v`
-  * Changed `.version()` so it's configurable [felixge]
+(Released in 7.0.0)
 
-0.3.0 / 2011-10-31
-==================
+## [7.0.0-1] (2020-11-21)
 
-  * Added support for long flags only. Closes #18
+(Released in 7.0.0)
 
-0.2.1 / 2011-10-24
-==================
+## [7.0.0-0] (2020-10-25)
 
-  * "node": ">= 0.4.x < 0.7.0". Closes #20
+(Released in 7.0.0)
 
-0.2.0 / 2011-09-26
-==================
+## [6.2.1] (2020-12-13)
 
-  * Allow for defaults that are not just boolean. Default peassignment only occurs for --no-*, optional, and required arguments. [Jim Isaacs]
+### Fixed
 
-0.1.0 / 2011-08-24
-==================
+- some tests failed if directory path included a space ([1390])
 
-  * Added support for custom `--help` output
+## [6.2.0] (2020-10-25)
 
-0.0.5 / 2011-08-18
-==================
+### Added
 
-  * Changed: when the user enters nothing prompt for password again
-  * Fixed issue with passwords beginning with numbers [NuckChorris]
+- added 'tsx' file extension for stand-alone executable subcommands ([#1368])
+- documented second parameter to `.description()` to describe command arguments ([#1353])
+- documentation of special cases with options taking varying numbers of option-arguments ([#1332])
+- documentation for terminology ([#1361])
+  
+### Fixed
 
-0.0.4 / 2011-08-15
-==================
-
-  * Fixed `Commander#args`
-
-0.0.3 / 2011-08-15
-==================
-
-  * Added default option value support
-
-0.0.2 / 2011-08-15
-==================
-
-  * Added mask support to `Command#password(str[, mask], fn)`
-  * Added `Command#password(str, fn)`
-
-0.0.1 / 2010-01-03
-==================
-
-  * Initial release
+- add missing TypeScript definition for `.addHelpCommand()' ([#1375])
+- removed blank line after "Arguments:" in help, to match "Options:" and "Commands:" ([#1360])
+
+### Changed
+
+- update dependencies
+
+## [6.1.0] (2020-08-28)
+
+### Added
+
+- include URL to relevant section of README for error for potential conflict between Command properties and option values ([#1306])
+- `.combineFlagAndOptionalValue(false)` to ease upgrade path from older versions of Commander ([#1326])
+- allow disabling the built-in help option using `.helpOption(false)` ([#1325])
+- allow just some arguments in `argumentDescription` to `.description()` ([#1323])
+
+### Changed
+
+- tidy async test and remove lint override ([#1312])
+
+### Fixed
+
+- executable subcommand launching when script path not known ([#1322])
+
+## [6.0.0] (2020-07-21)
+
+### Added
+
+- add support for variadic options ([#1250])
+- allow options to be added with just a short flag ([#1256])
+  - *Breaking* the option property has same case as flag. e.g. flag `-n` accessed as `opts().n` (previously uppercase)
+- *Breaking* throw an error if there might be a clash between option name and a Command property, with advice on how to resolve ([#1275])
+
+### Fixed
+
+- Options which contain -no- in the middle of the option flag should not be treated as negatable. ([#1301])
+
+## [6.0.0-0] (2020-06-20)
+
+(Released in 6.0.0)
+
+
+## Older versions
+
+* [5.x](./changelogs/CHANGELOG-5.md)
+* [4.x](./changelogs/CHANGELOG-4.md)
+* [3.x](./changelogs/CHANGELOG-3.md)
+* [2.x](./changelogs/CHANGELOG-2.md)
+* [1.x](./changelogs/CHANGELOG-1.md)
+* [0.x](./changelogs/CHANGELOG-0.md)
+
+[#948]: https://github.com/tj/commander.js/issues/948
+[#1032]: https://github.com/tj/commander.js/issues/1032
+[#1250]: https://github.com/tj/commander.js/pull/1250
+[#1256]: https://github.com/tj/commander.js/pull/1256
+[#1275]: https://github.com/tj/commander.js/pull/1275
+[#1296]: https://github.com/tj/commander.js/pull/1296
+[#1301]: https://github.com/tj/commander.js/issues/1301
+[#1306]: https://github.com/tj/commander.js/pull/1306
+[#1312]: https://github.com/tj/commander.js/pull/1312
+[#1322]: https://github.com/tj/commander.js/pull/1322
+[#1323]: https://github.com/tj/commander.js/pull/1323
+[#1325]: https://github.com/tj/commander.js/pull/1325
+[#1326]: https://github.com/tj/commander.js/pull/1326
+[#1331]: https://github.com/tj/commander.js/pull/1331
+[#1332]: https://github.com/tj/commander.js/pull/1332
+[#1349]: https://github.com/tj/commander.js/pull/1349
+[#1353]: https://github.com/tj/commander.js/pull/1353
+[#1360]: https://github.com/tj/commander.js/pull/1360
+[#1361]: https://github.com/tj/commander.js/pull/1361
+[#1365]: https://github.com/tj/commander.js/pull/1365
+[#1368]: https://github.com/tj/commander.js/pull/1368
+[#1375]: https://github.com/tj/commander.js/pull/1375
+[#1380]: https://github.com/tj/commander.js/pull/1380
+[#1387]: https://github.com/tj/commander.js/pull/1387
+[#1390]: https://github.com/tj/commander.js/pull/1390
+[#1403]: https://github.com/tj/commander.js/pull/1403
+[#1409]: https://github.com/tj/commander.js/pull/1409
+[#1427]: https://github.com/tj/commander.js/pull/1427
+[#1440]: https://github.com/tj/commander.js/pull/1440
+[#1448]: https://github.com/tj/commander.js/pull/1448
+[#1449]: https://github.com/tj/commander.js/pull/1449
+[#1453]: https://github.com/tj/commander.js/pull/1453
+[#1454]: https://github.com/tj/commander.js/pull/1454
+[#1464]: https://github.com/tj/commander.js/pull/1464
+[#1475]: https://github.com/tj/commander.js/pull/1475
+[#1477]: https://github.com/tj/commander.js/pull/1477
+[#1483]: https://github.com/tj/commander.js/pull/1483
+[#1490]: https://github.com/tj/commander.js/pull/1490
+[#1497]: https://github.com/tj/commander.js/pull/1497
+[#1500]: https://github.com/tj/commander.js/pull/1500
+[#1508]: https://github.com/tj/commander.js/pull/1508
+[#1513]: https://github.com/tj/commander.js/pull/1513
+[#1514]: https://github.com/tj/commander.js/pull/1514
+[#1516]: https://github.com/tj/commander.js/pull/1516
+[#1520]: https://github.com/tj/commander.js/pull/1520
+[#1521]: https://github.com/tj/commander.js/pull/1521
+[#1522]: https://github.com/tj/commander.js/pull/1522
+[#1525]: https://github.com/tj/commander.js/pull/1525
+[#1529]: https://github.com/tj/commander.js/pull/1529
+[#1534]: https://github.com/tj/commander.js/pull/1534
+[#1539]: https://github.com/tj/commander.js/pull/1539
+[#1557]: https://github.com/tj/commander.js/pull/1557
+[#1567]: https://github.com/tj/commander.js/pull/1567
+[#1570]: https://github.com/tj/commander.js/pull/1570
+[#1587]: https://github.com/tj/commander.js/pull/1587
+[#1590]: https://github.com/tj/commander.js/pull/1590
+
+[Unreleased]: https://github.com/tj/commander.js/compare/master...develop
+[8.2.0]: https://github.com/tj/commander.js/compare/v8.1.0...v8.2.0
+[8.1.0]: https://github.com/tj/commander.js/compare/v8.0.0...v8.1.0
+[8.0.0]: https://github.com/tj/commander.js/compare/v7.2.0...v8.0.0
+[8.0.0-2]: https://github.com/tj/commander.js/compare/v8.0.0-1...v8.0.0-2
+[8.0.0-1]: https://github.com/tj/commander.js/compare/v8.0.0-0...v8.0.0-1
+[8.0.0-0]: https://github.com/tj/commander.js/compare/v7.2.0...v8.0.0-0
+[7.2.0]: https://github.com/tj/commander.js/compare/v7.1.0...v7.2.0
+[7.1.0]: https://github.com/tj/commander.js/compare/v7.0.0...v7.1.0
+[7.0.0]: https://github.com/tj/commander.js/compare/v6.2.1...v7.0.0
+[7.0.0-2]: https://github.com/tj/commander.js/compare/v7.0.0-1...v7.0.0-2
+[7.0.0-1]: https://github.com/tj/commander.js/compare/v7.0.0-0...v7.0.0-1
+[7.0.0-0]: https://github.com/tj/commander.js/compare/v6.2.0...v7.0.0-0
+[6.2.1]: https://github.com/tj/commander.js/compare/v6.2.0..v6.2.1
+[6.2.0]: https://github.com/tj/commander.js/compare/v6.1.0..v6.2.0
+[6.1.0]: https://github.com/tj/commander.js/compare/v6.0.0..v6.1.0
+[6.0.0]: https://github.com/tj/commander.js/compare/v5.1.0..v6.0.0
+[6.0.0-0]: https://github.com/tj/commander.js/compare/v5.1.0..v6.0.0-0
